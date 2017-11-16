@@ -1,0 +1,40 @@
+
+.page {
+  float: left;
+  width: 100vw;
+  height: 100vh;
+}
+section{
+  position:relative;
+  height:100%;
+}
+.docScroller {
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-snap-points-y: repeat(100%);
+  scroll-snap-type: mandatory;
+  scroll-snap-destination: 100% 0%;
+}
+
+
+.top-btn  { 
+    color: white;
+    border-radius: 2px;
+    padding: 10px 35px;
+    margin-left: 15px;
+    transition: all .3s;
+    text-transform: uppercase;
+    width: 11rem;
+    height: 2.5rem;
+    float: right;
+}
+
+.top-btn:hover  { 
+    border: 2px solid #ee6059;
+    background-color: #ff2059;
+}
+

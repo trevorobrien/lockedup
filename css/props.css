@@ -1,0 +1,19 @@
+.pos-s {
+  position: static;
+}
+.pos-r {
+  position: relative;
+}
+.pos-a {
+  position: absolute;
+}
+.pos-f {
+  position: fixed;
+}
+.t-a {
+  top: auto;
+}
+
+.t-0 {
+  top: 0;
+}

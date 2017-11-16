@@ -1,0 +1,20 @@
+$headline-font: 'Montserrat', sans-serif;
+
+h1 {
+  font-family: $headline-font;
+}
+h2 {
+  $headline-font: (1.5rem);
+}
+h3 {
+  $body-font: (1.17rem);
+}
+h4 {
+  $headline-font: (1.12rem);
+}
+h5 {
+  $headline-font: (.83rem);
+}
+h6 {
+  $headline-font: (.75rem);
+}

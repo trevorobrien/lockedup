@@ -1,0 +1,43 @@
+{
+  "name": "Basic-Node-Build",
+  "version": "0.0.1",
+  "description": "A starter for node projects using NPM for build process",
+  "dependencies": {
+    "basic-auth": "^2.0.0",
+    "body-parser": "^1.18.2",
+    "browserify": "^14.4.0",
+    "clean-css": "^3.4.19",
+    "express": "^4.16.1",
+    "http-auth": "^3.2.3",
+    "http-server": "^0.9.0",
+    "less": "~2.7.1",
+    "node-sass": "^3.10.0",
+    "postbuild": "^2.1.0",
+    "superagent": "^3.8.0"
+  },
+  "devDependencies": {
+    "uglify-js": "^2.7.3",
+    "watch": "^0.19.2",
+    "parallelshell": "latest",
+    "live-reload": "latest",
+    "catw": "~0.0.1",
+    "watchify": "latest"
+  },
+  "engines": {
+    "node": "6.9.5"
+  },
+  "scripts": {
+    "info": "echo 'npm as a build tool'",
+    "livereload": "live-reload --port 8080 ./",
+    "assets": "cp -R static/images/ docs/static/images/",
+    "build": "echo '=> building' && npm run build:js -s && npm run build:less -s && postbuild -i index.html -o docs/index.html -r production -H && npm run assets",
+    "build:js": "browserify js/*.js > docs/static/bundle.js",
+    "build:sass": "node-sass sass/style.scss css/main.min.css --output-style compressed",
+    "watch:js": "watchify js/*.js -o static/bundle.js -dv",
+    "watch": "npm run watch-css & npm run watch-js",
+    "watch:sass": "npm run build:sass -- -w",
+    "start": "parallelshell 'node server' 'npm run livereload' 'npm run watch:sass -- -w'"
+  },
+  "author": "Experiment",
+  "license": "Open"
+}
